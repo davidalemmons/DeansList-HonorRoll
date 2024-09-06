@@ -19,7 +19,12 @@ def qualify():
 
         fname = input("Enter student's first name: ")
 
-        gpa = float(input("Enter student's GPA: "))
+        while True:
+            try:
+                gpa = float(input("Enter student's GPA: "))
+                break
+            except ValueError:
+                print("Invalid input. Please enter a number for the GPA.")
 
         if gpa >= 3.5:
             print(fname+ " "+lname+ " has made the Dean's List!")
